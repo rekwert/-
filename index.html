@@ -262,20 +262,23 @@
                         <p class="mt-4 max-w-xs mx-auto">Пишите нам в любое время - мы ответим в течение часа!</p>
                     </div>
                     <div class="w-full max-w-md">
-                        <form id="contact-form" class="space-y-4">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                            <input type="hidden" name="access_key" value="activate-my-rekdev-form">
+                            <input type="hidden" name="subject" value="Активация формы для сайта RekDev">
+                            <input type="hidden" name="from_name" value="Активация сайта RekDev">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
                             <div>
-                                <input type="text" name="name" placeholder="Ваше имя" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                                <input type="text" name="name" placeholder="Ваше имя (можно любое)" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
                             </div>
                             <div>
-                                <input type="email" name="email" placeholder="Email для связи" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                                <input type="email" name="email" value="korosteliov.danil@mail.ru" required readonly class="w-full bg-white/30 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
                             </div>
                             <div>
-                                <textarea name="message" placeholder="Опишите ваш проект" rows="4" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                                <textarea name="message" placeholder="Напишите 'тест'" rows="4" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
                             </div>
-                            <button type="submit" id="submit-button" class="w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-gray-100 transition">
-                                Отправить заявку
+                            <button type="submit" class="w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-gray-100 transition">
+                                Нажать для получения ключа
                             </button>
-                            <div id="form-result" class="mt-4 text-center text-sm"></div>
                         </form>
                     </div>
                 </div>
@@ -334,63 +337,6 @@
             });
 
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-            const form = document.getElementById('contact-form');
-            const result = document.getElementById('form-result');
-            const submitButton = document.getElementById('submit-button');
-
-            const accessKey = 'test';
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-
-                const object = {
-                    access_key: accessKey,
-                    subject: `Новая заявка с сайта RekDev от ${formData.get('name')}`,
-                    from_name: "RekDev Landing",
-                };
-                formData.forEach((value, key) => {
-                    object[key] = value;
-                });
-                const json = JSON.stringify(object);
-
-                result.innerHTML = "Отправка...";
-                result.classList.remove('text-green-300', 'text-red-300');
-                submitButton.disabled = true;
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let jsonResponse = await response.json();
-                    if (response.status == 200) {
-                        result.innerHTML = "Заявка успешно отправлена! Мы скоро свяжемся с вами.";
-                        result.classList.add('text-green-300');
-                        form.reset();
-                    } else {
-                        console.log(response);
-                        result.innerHTML = jsonResponse.message || "Что-то пошло не так. Попробуйте позже.";
-                        result.classList.add('text-red-300');
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    result.innerHTML = "Ошибка! Не удалось отправить форму.";
-                    result.classList.add('text-red-300');
-                })
-                .finally(() => {
-                    submitButton.disabled = false;
-                    setTimeout(() => {
-                        result.innerHTML = '';
-                    }, 5000);
-                });
-            });
         });
     </script>
 </body>
