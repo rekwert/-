@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,34 +50,43 @@
     </style>
 </head>
 <body class="font-sans bg-light text-dark">
-    <!-- Header/Navigation -->
     <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
+            <a href="#" class="flex items-center">
                 <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
                     <span class="text-white font-bold text-xl">R</span>
                 </div>
                 <span class="ml-3 text-xl font-bold text-primary">RekDev</span>
-            </div>
-
-            <nav class="hidden md:flex space-x-8">
+            </a>
+            <nav id="nav-menu" class="hidden md:flex space-x-8">
                 <a href="#services" class="font-medium hover:text-primary transition">Услуги</a>
                 <a href="#advantages" class="font-medium hover:text-primary transition">Преимущества</a>
                 <a href="#projects" class="font-medium hover:text-primary transition">Проекты</a>
                 <a href="#contact" class="font-medium hover:text-primary transition">Контакты</a>
             </nav>
-
-            <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
-                Заказать
-            </a>
-
-            <button class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-block bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-indigo-700 transition shadow-md shadow-indigo-200">
+                    Заказать
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-2xl" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-white z-40 pt-20">
+        <nav class="flex flex-col items-center space-y-8 mt-8">
+            <a href="#services" class="text-xl font-medium hover:text-primary transition mobile-nav-link">Услуги</a>
+            <a href="#advantages" class="text-xl font-medium hover:text-primary transition mobile-nav-link">Преимущества</a>
+            <a href="#projects" class="text-xl font-medium hover:text-primary transition mobile-nav-link">Проекты</a>
+            <a href="#contact" class="text-xl font-medium hover:text-primary transition mobile-nav-link">Контакты</a>
+            <a href="#contact" class="mt-4 bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 mobile-nav-link">
+                Заказать
+            </a>
+        </nav>
+    </div>
+
     <section class="pt-32 pb-20">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-12 md:mb-0">
@@ -96,7 +105,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="md:w-1/2 relative">
                 <div class="relative">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse-slow"></div>
@@ -114,25 +122,22 @@
                                     <i class="fas fa-ellipsis-h text-xs text-gray-500"></i>
                                 </div>
                             </div>
-
                             <div class="space-y-4">
                                 <div class="flex">
-                                    <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
+                                    <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center shrink-0">
                                         <i class="fas fa-robot text-white"></i>
                                     </div>
                                     <div class="ml-3 bg-gray-100 rounded-xl p-3">
                                         <p class="text-sm">Привет! Я бот RekDev. Чем могу помочь?</p>
                                     </div>
                                 </div>
-
                                 <div class="flex justify-end">
                                     <div class="bg-primary text-white rounded-xl p-3 max-w-xs">
                                         <p class="text-sm">Хочу автоматизировать свой бизнес</p>
                                     </div>
                                 </div>
-
                                 <div class="flex">
-                                    <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center">
+                                    <div class="w-8 h-8 rounded-full gradient-bg flex items-center justify-center shrink-0">
                                         <i class="fas fa-robot text-white"></i>
                                     </div>
                                     <div class="ml-3 bg-gray-100 rounded-xl p-3">
@@ -140,10 +145,9 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="mt-6 flex border-t pt-4">
-                                <input type="text" placeholder="Напишите сообщение..." class="flex-1 bg-gray-100 rounded-full py-2 px-4 text-sm">
-                                <button class="ml-2 w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                                <input type="text" placeholder="Напишите сообщение..." class="flex-1 bg-gray-100 rounded-full py-2 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                                <button class="ml-2 w-10 h-10 rounded-full gradient-bg flex items-center justify-center shrink-0">
                                     <i class="fas fa-paper-plane text-white"></i>
                                 </button>
                             </div>
@@ -154,218 +158,124 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Наши услуги</h2>
                 <p class="text-gray-600">Мы предоставляем комплексные решения для вашего бизнеса с использованием передовых технологий</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
                 <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition duration-300">
                     <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fab fa-telegram text-white text-2xl"></i>
+                        <i class="fab fa-telegram text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Telegram боты</h3>
                     <p class="text-gray-600 mb-4">
                         Разработка Telegram ботов любой сложности на Python для автоматизации коммуникации, обработки заказов, рассылок и многого другого.
                     </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Интеграция с платежными системами</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Сложная бизнес-логика</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Работа с базами данных</span>
-                        </li>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Интеграция с платежными системами</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Сложная бизнес-логика</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Работа с базами данных</span></li>
                     </ul>
                 </div>
-
-                <!-- Service 2 -->
                 <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition duration-300">
                     <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-white text-2xl"></i>
+                        <i class="fas fa-cogs text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Автоматизация бизнеса</h3>
                     <p class="text-gray-600 mb-4">
                         Создаем системы автоматизации для вашего бизнеса: от простых скриптов до комплексных решений, охватывающих все бизнес-процессы.
                     </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Интеграция CRM и ERP систем</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Автоматизация отчетности</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Чат-боты для поддержки</span>
-                        </li>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Интеграция CRM и ERP систем</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Автоматизация отчетности</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Чат-боты для поддержки</span></li>
                     </ul>
                 </div>
-
-                <!-- Service 3 -->
                 <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition duration-300">
                     <div class="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-globe text-white text-2xl"></i>
+                        <i class="fas fa-globe text-white text-3xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Web-разработка</h3>
                     <p class="text-gray-600 mb-4">
                         Создаем современные web-сервисы и приложения любой сложности с использованием передовых технологий и фреймворков.
                     </p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Индивидуальные решения</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Высокая производительность</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-secondary mr-2"></i>
-                            <span>Адаптивный дизайн</span>
-                        </li>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Индивидуальные решения</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Высокая производительность</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i><span>Адаптивный дизайн</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Advantages Section -->
     <section id="advantages" class="py-20 bg-gradient-to-br from-indigo-50 to-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Почему выбирают нас</h2>
                 <p class="text-gray-600">Наши преимущества, которые делают сотрудничество эффективным и приятным</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-2xl p-6 shadow-md">
-                    <div class="text-5xl text-primary mb-4">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Скорость</h3>
-                    <p class="text-gray-600">Быстрая реализация проектов без потери качества</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-md">
-                    <div class="text-5xl text-primary mb-4">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Надежность</h3>
-                    <p class="text-gray-600">Стабильная работа ваших систем 24/7</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-md">
-                    <div class="text-5xl text-primary mb-4">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Инновации</h3>
-                    <p class="text-gray-600">Используем только современные технологии</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 shadow-md">
-                    <div class="text-5xl text-primary mb-4">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Поддержка</h3>
-                    <p class="text-gray-600">Комплексное сопровождение после запуска</p>
-                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-bolt"></i></div><h3 class="text-xl font-bold mb-2">Скорость</h3><p class="text-gray-600">Быстрая реализация проектов без потери качества</p></div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-lock"></i></div><h3 class="text-xl font-bold mb-2">Надежность</h3><p class="text-gray-600">Стабильная работа ваших систем 24/7</p></div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-lightbulb"></i></div><h3 class="text-xl font-bold mb-2">Инновации</h3><p class="text-gray-600">Используем только современные технологии</p></div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-headset"></i></div><h3 class="text-xl font-bold mb-2">Поддержка</h3><p class="text-gray-600">Комплексное сопровождение после запуска</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Наши проекты</h2>
                 <p class="text-gray-600">Примеры реализованных решений для наших клиентов</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <i class="fas fa-shopping-cart text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold ml-4">Бот для интернет-магазина</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        Полностью автоматизированный бот для приема заказов, обработки платежей и отслеживания доставки. Интеграция с CRM и системой складского учета.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">Telegram API</span>
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                    </div>
+                    <div class="flex items-center mb-6"><div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-shopping-cart text-white"></i></div><h3 class="text-xl font-bold ml-4">Бот для интернет-магазина</h3></div>
+                    <p class="text-gray-600 mb-6">Полностью автоматизированный бот для приема заказов, обработки платежей и отслеживания доставки. Интеграция с CRM и системой складского учета.</p>
+                    <div class="flex flex-wrap gap-2"><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Telegram API</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span></div>
                 </div>
-
                 <div class="bg-gray-50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                            <i class="fas fa-calendar-check text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold ml-4">Система бронирования</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6">
-                        Комплексное решение для бронирования услуг через Telegram бота с автоматическим напоминанием, онлайн-оплатой и интеграцией с календарем.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">Django</span>
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">Aiogram</span>
-                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm">Stripe API</span>
-                    </div>
+                    <div class="flex items-center mb-6"><div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-calendar-check text-white"></i></div><h3 class="text-xl font-bold ml-4">Система бронирования</h3></div>
+                    <p class="text-gray-600 mb-6">Комплексное решение для бронирования услуг через Telegram бота с автоматическим напоминанием, онлайн-оплатой и интеграцией с календарем.</p>
+                    <div class="flex flex-wrap gap-2"><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Django</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Aiogram</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Stripe API</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-20 gradient-bg text-white">
         <div class="container mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Свяжитесь с нами</h2>
-                <p>Готовы автоматизировать ваш бизнес? Напишите нам в Telegram!</p>
+                <p>Готовы автоматизировать ваш бизнес? Заполните форму или напишите нам в Telegram!</p>
             </div>
-
-            <div class="max-w-2xl mx-auto bg-white/20 backdrop-blur-sm rounded-2xl p-8">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                        <div class="text-center">
-                            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6">
-                                <i class="fab fa-telegram text-3xl"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-4">Наш Telegram</h3>
-                            <a href="https://t.me/rekwert" class="text-xl font-medium underline hover:no-underline">@rekwert</a>
-                            <p class="mt-4">Пишите нам в любое время - мы ответим в течение часа!</p>
-                        </div>
+            <div class="max-w-4xl mx-auto bg-white/20 backdrop-blur-sm rounded-2xl p-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6"><i class="fab fa-telegram text-4xl"></i></div>
+                        <h3 class="text-2xl font-bold mb-2">Наш Telegram</h3>
+                        <a href="https://t.me/rekwert" target="_blank" rel="noopener noreferrer" class="text-xl font-medium underline hover:no-underline">@rekwert</a>
+                        <p class="mt-4 max-w-xs mx-auto">Пишите нам в любое время - мы ответим в течение часа!</p>
                     </div>
-
-                    <div class="md:w-1/2">
-                        <form class="space-y-4">
+                    <div class="w-full max-w-md">
+                        <form id="contact-form" class="space-y-4">
                             <div>
-                                <input type="text" placeholder="Ваше имя" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                                <input type="text" name="name" placeholder="Ваше имя" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
                             </div>
                             <div>
-                                <input type="email" placeholder="Email" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
+                                <input type="email" name="email" placeholder="Email для связи" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white">
                             </div>
                             <div>
-                                <textarea placeholder="Опишите ваш проект" rows="4" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                                <textarea name="message" placeholder="Опишите ваш проект" rows="4" required class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-gray-100 transition">
+                            <button type="submit" id="submit-button" class="w-full bg-white text-primary font-bold py-3 rounded-lg hover:bg-gray-100 transition">
                                 Отправить заявку
                             </button>
+                            <div id="form-result" class="mt-4 text-center text-sm"></div>
                         </form>
                     </div>
                 </div>
@@ -373,62 +283,115 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl">R</span>
-                        </div>
+                    <div class="flex items-center justify-center md:justify-start">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center"><span class="text-white font-bold text-xl">R</span></div>
                         <span class="ml-3 text-xl font-bold">RekDev</span>
                     </div>
-                    <p class="mt-4 text-gray-400 max-w-md">
-                        Разработка Telegram ботов, автоматизация бизнеса и создание web-сервисов любой сложности с использованием передовых технологий.
-                    </p>
+                    <p class="mt-4 text-gray-400 max-w-md">Разработка Telegram ботов, автоматизация бизнеса и создание web-сервисов.</p>
                 </div>
-
                 <div class="flex flex-col items-center md:items-end">
                     <div class="flex space-x-4 mb-6">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                        <a href="https://t.me/rekwert" target="_blank" rel="noopener noreferrer" aria-label="Наш Telegram" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
                             <i class="fab fa-telegram"></i>
                         </a>
-                        </a>
-                        </a>
                     </div>
-                    <p class="text-gray-400">© 2025 RekDev. Все права защищены.</p>
+                    <p class="text-gray-400">© <span id="copyright-year"></span> RekDev. Все права защищены.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            mobileMenuButton.addEventListener('click', toggleMenu);
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+            const form = document.getElementById('contact-form');
+            const result = document.getElementById('form-result');
+            const submitButton = document.getElementById('submit-button');
+
+            const accessKey = 'test';
+
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                const formData = new FormData(form);
+
+                const object = {
+                    access_key: accessKey,
+                    subject: `Новая заявка с сайта RekDev от ${formData.get('name')}`,
+                    from_name: "RekDev Landing",
+                };
+                formData.forEach((value, key) => {
+                    object[key] = value;
+                });
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Отправка...";
+                result.classList.remove('text-green-300', 'text-red-300');
+                submitButton.disabled = true;
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let jsonResponse = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Заявка успешно отправлена! Мы скоро свяжемся с вами.";
+                        result.classList.add('text-green-300');
+                        form.reset();
+                    } else {
+                        console.log(response);
+                        result.innerHTML = jsonResponse.message || "Что-то пошло не так. Попробуйте позже.";
+                        result.classList.add('text-red-300');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Ошибка! Не удалось отправить форму.";
+                    result.classList.add('text-red-300');
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    setTimeout(() => {
+                        result.innerHTML = '';
+                    }, 5000);
                 });
             });
         });
-        // Mobile menu toggle
-        const menuButton = document.querySelector('button');
-        const navMenu = document.querySelector('nav');
-
-        menuButton.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-            navMenu.classList.toggle('flex');
-            navMenu.classList.toggle('flex-col');
-            navMenu.classList.toggle('absolute');
-            navMenu.classList.toggle('top-16');
-            navMenu.classList.toggle('right-4');
-            navMenu.classList.toggle('bg-white');
-            navMenu.classList.toggle('p-4');
-            navMenu.classList.toggle('rounded-lg');
-            navMenu.classList.toggle('shadow-lg');
-        });
     </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=rekwer/my-website" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</body>
 </html>
