@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,28 +29,46 @@
         .gradient-bg {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
         }
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .animate-pulse-slow {
             animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
         }
+
         .floating {
             animation: floating 6s ease-in-out infinite;
         }
+
         @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
     </style>
 </head>
+
 <body class="font-sans bg-light text-dark">
+
     <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center">
@@ -218,10 +237,26 @@
                 <p class="text-gray-600">Наши преимущества, которые делают сотрудничество эффективным и приятным</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-bolt"></i></div><h3 class="text-xl font-bold mb-2">Скорость</h3><p class="text-gray-600">Быстрая реализация проектов без потери качества</p></div>
-                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-lock"></i></div><h3 class="text-xl font-bold mb-2">Надежность</h3><p class="text-gray-600">Стабильная работа ваших систем 24/7</p></div>
-                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-lightbulb"></i></div><h3 class="text-xl font-bold mb-2">Инновации</h3><p class="text-gray-600">Используем только современные технологии</p></div>
-                <div class="bg-white rounded-2xl p-6 shadow-md text-center"><div class="text-5xl text-primary mb-4"><i class="fas fa-headset"></i></div><h3 class="text-xl font-bold mb-2">Поддержка</h3><p class="text-gray-600">Комплексное сопровождение после запуска</p></div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-bolt"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Скорость</h3>
+                    <p class="text-gray-600">Быстрая реализация проектов без потери качества</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-lock"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Надежность</h3>
+                    <p class="text-gray-600">Стабильная работа ваших систем 24/7</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-lightbulb"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Инновации</h3>
+                    <p class="text-gray-600">Используем только современные технологии</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-md text-center">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-headset"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Поддержка</h3>
+                    <p class="text-gray-600">Комплексное сопровождение после запуска</p>
+                </div>
             </div>
         </div>
     </section>
@@ -234,14 +269,28 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6"><div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-shopping-cart text-white"></i></div><h3 class="text-xl font-bold ml-4">Бот для интернет-магазина</h3></div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-shopping-cart text-white"></i></div>
+                        <h3 class="text-xl font-bold ml-4">Бот для интернет-магазина</h3>
+                    </div>
                     <p class="text-gray-600 mb-6">Полностью автоматизированный бот для приема заказов, обработки платежей и отслеживания доставки. Интеграция с CRM и системой складского учета.</p>
-                    <div class="flex flex-wrap gap-2"><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Telegram API</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span></div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Telegram API</span>
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                    </div>
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-8">
-                    <div class="flex items-center mb-6"><div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-calendar-check text-white"></i></div><h3 class="text-xl font-bold ml-4">Система бронирования</h3></div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center shrink-0"><i class="fas fa-calendar-check text-white"></i></div>
+                        <h3 class="text-xl font-bold ml-4">Система бронирования</h3>
+                    </div>
                     <p class="text-gray-600 mb-6">Комплексное решение для бронирования услуг через Telegram бота с автоматическим напоминанием, онлайн-оплатой и интеграцией с календарем.</p>
-                    <div class="flex flex-wrap gap-2"><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Django</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Aiogram</span><span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Stripe API</span></div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Django</span>
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Aiogram</span>
+                        <span class="bg-indigo-100 text-primary px-3 py-1 rounded-full text-sm font-medium">Stripe API</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,18 +300,20 @@
         <div class="container mx-auto px-4">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Свяжитесь с нами</h2>
-                <p>Готовы автоматизировать ваш бизнес? Заполните форму или напишите нам в Telegram!</p>
+                <p>Готовы автоматизировать ваш бизнес? Нажмите на кнопку и напишите нам в Telegram!</p>
             </div>
-            <div class="max-w-4xl mx-auto bg-white/20 backdrop-blur-sm rounded-2xl p-8">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/20 mb-6"><i class="fab fa-telegram text-4xl"></i></div>
-                        <h3 class="text-2xl font-bold mb-2">Наш Telegram</h3>
-                        <a href="https://t.me/rekwert" target="_blank" rel="noopener noreferrer" class="text-xl font-medium underline hover:no-underline">@rekwert</a>
-                        <p class="mt-4 max-w-xs mx-auto">Пишите нам в любое время - мы ответим в течение часа!</p>
+            <div class="max-w-4xl mx-auto bg-white/20 backdrop-blur-sm rounded-2xl p-8 md:p-12">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-24 h-24 md:w-32 md:h-32 rounded-full bg-white/20 mb-6">
+                        <i class="fab fa-telegram text-5xl md:text-6xl"></i>
                     </div>
-                    <div class="w-full max-w-md">
-                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Напишите нам в Telegram</h3>
+                    <a href="https://t.me/rekwert" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
+                        Перейти в чат (@rekwert)
+                    </a>
+                    <p class="mt-6 text-white/80 max-w-md mx-auto">
+                        Это самый быстрый способ получить консультацию. Отвечаем в течение часа!
+                    </p>
                 </div>
             </div>
         </div>
@@ -273,7 +324,9 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center justify-center md:justify-start">
-                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center"><span class="text-white font-bold text-xl">R</span></div>
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">R</span>
+                        </div>
                         <span class="ml-3 text-xl font-bold">RekDev</span>
                     </div>
                     <p class="mt-4 text-gray-400 max-w-md">Разработка Telegram ботов, автоматизация бизнеса и создание web-сервисов.</p>
@@ -291,9 +344,11 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Плавный скролл к якорям
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetElement = document.querySelector(this.getAttribute('href'));
                     if (targetElement) {
@@ -304,6 +359,7 @@
                 });
             });
 
+            // Логика мобильного меню
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -318,8 +374,12 @@
                 link.addEventListener('click', toggleMenu);
             });
 
+            // Динамический год в футере
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
         });
     </script>
+
 </body>
+
 </html>
